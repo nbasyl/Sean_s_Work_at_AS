@@ -32,7 +32,7 @@ AIR:
     -item_reg $IG
 
     Air rating:
-    /home/syliu/AIR/air_code/air_rating -train_ui amz_xxx.train \
+    /home/syliu/AIR/air_code/IPR -train_ui amz_xxx.train \
     -train_ui_rating amz_xxx_1.train, amz_xxx_2.train, amz_xxx_3.train, amz_xxx_4.train, amz_xxx_5.train \
     -save_q embedding_result_save_address.txt \
     -dimension 100 \
