@@ -1,0 +1,46 @@
+
+AIR: 
+
+    suppose there is a dataset amz_xxx which contained rating from 1 - 5
+    After preprocessing, we will have:
+        amz_xxx.train
+        amz_xxx.test
+        amz_xxx_1.train
+        amz_xxx_2.train
+        amz_xxx_3.train
+        amz_xxx_4.train
+        amz_xxx_5.train
+
+    and another dataset amz_yyy which contained different user item interaction, i.e. play click search
+    After preprocessing, we will have: 
+        amz_yyy.train
+        amz_yyy.test
+        amz_yyy_play.train
+        amz_yyy_click.train
+        amz_yyy_search.train
+
+    For Data preprocessing please check /home/syliu/AIR/dataset_preprocess_documentation.txt
+
+    Air simple:
+    /home/syliu/AIR/air_code/air_new_simple -train_ui amz_xxx.train \
+    -save_q embedding_result_save_address.txt \
+    -dimension 100 \
+    -update_times $UPDATE_TIMES_NUM \
+    -worker 50 \
+    -init_alpha $init_alpha \
+    -user_reg $UG \
+    -item_reg $IG
+
+    Air rating:
+    /home/syliu/AIR/air_code/air_rating -train_ui amz_xxx.train \
+    -train_ui_rating amz_xxx_1.train, amz_xxx_2.train, amz_xxx_3.train, amz_xxx_4.train, amz_xxx_5.train \
+    -save_q embedding_result_save_address.txt \
+    -dimension 100 \
+    -update_times $UPDATE_TIMES_NUM \
+    -worker 50 \
+    -init_alpha $init_alpha \
+    -user_reg $UG \
+    -item_reg $IG
+
+
+
